@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+        .calculator {
+            width: 400px;
+            background-color:grey;
+            padding: 10px;
+            align-items: center;
+            
+            
+        }
+        .calc-container{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .calculator input[type="text"] {
+            width: 90%;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        .calculator input[type="button"] {
+            width: 48%;
+            padding: 5px;
+            margin-right: 2%;
+            margin-bottom: 5px;
+            
+        }
+
+        .calculator input[type="button"]:last-child {
+            margin-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <section class="calc-container">
+    <div class="calculator">
+        <input type="text" id="result" disabled>
+        <input type="button" value="1" onclick="DisplayResult('1')">
+        <input type="button" value="2" onclick="DisplayResult('2')">
+        <input type="button" value="3" onclick="DisplayResult('3')">
+        <input type="button" value="4" onclick="DisplayResult('4')">
+        <input type="button" value="5" onclick="DisplayResult('5')">
+        <input type="button" value="6" onclick="DisplayResult('6')">
+        <input type="button" value="7" onclick="DisplayResult('7')">
+        <input type="button" value="8" onclick="DisplayResult('8')">
+        <input type="button" value="9" onclick="DisplayResult('9')">
+        <input type="button" value="0" onclick="DisplayResult('0')">
+        <input type="button" value="+" onclick="DisplayResult('+')">
+        <input type="button" value="-" onclick="DisplayResult('-')">
+        <input type="button" value="" onclick="DisplayResult('')">
+        <input type="button" value="/" onclick="DisplayResult('/')">
+        <input type="button" value="=" onclick="calculateResult()">
+        <input type="button" value="C" onclick="clearResult()">
+    </div>
+</section>
+
+    <script>
+        function DisplayResult(value) {
+            document.getElementById('result').value += value;
+        }
+
+        function calculateResult() {
+            var result = eval(document.getElementById('result').value);
+            document.getElementById('result').value = result;
+        }
+
+        function clearResult() {
+            document.getElementById('result').value = '';
+        }
+    </script>
+</body>
+</html>
